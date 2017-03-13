@@ -69,3 +69,4 @@ target/
 
 #database
 *.sqlite
+*.sqlite3
