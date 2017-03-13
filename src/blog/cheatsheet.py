@@ -26,3 +26,17 @@ curl -X POST -H "Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2V
 
 
 '''
+
+'''
+error jpeg
+
+Ubuntu
+sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
+
+MacOS
+brew install libjpeg zlib
+
+You May Need
+brew link zlib --force
+
+'''
