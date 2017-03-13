@@ -13,6 +13,11 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 import dj_database_url
 
+# Path helper
+location = lambda x: os.path.join(
+    os.path.dirname(os.path.realpath(__file__)), x)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # BASE_DIR = "/Users/jmitch/desktop/blog/src/"
@@ -152,15 +157,10 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ),
-    # 'DEFAULT_PARSER_CLASSES': (
-    #     'rest_framework.parsers.JSONParser',
-    # )
     "DEFAULT_AUTHENTICATION_CLASSES": (
-         #'rest_framework.authentication.SessionAuthentication',
          'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        #'rest_framework.authentication.BasicAuthentication'
 
-    ), 
+    ),
     "DEFAULT_PERMISSION_CLASSES": (
         'rest_framework.permissions.IsAuthenticated',
         #'rest_framework.permissions.IsAuthenticatedOrReadOnly',
